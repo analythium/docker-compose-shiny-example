@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  hello:
+    image: registry.gitlab.com/analythium/shinyproxy-hello/hello:latest
+    restart: unless-stopped
+    ports:
+      - "9000:3838"
+  pink:
+    build: ./pink
+    restart: unless-stopped
+    expose:
+      - "3838"
+  covidapp:
+    image: analythium/covidapp-shiny:minimal
+    restart: unless-stopped
+    expose:
+      - "3838"
+  caddy:
+    image: caddy:2.3.0-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/site:/srv
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - hello
+      - pink
+      - covidapp
+
+volumes:
+  caddy_data:
+  caddy_config:
