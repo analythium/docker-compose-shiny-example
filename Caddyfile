@@ -17,4 +17,7 @@
         rewrite @404 /404.html
         file_server
     }
+    log {
+        output file /var/log/caddy/access.log
+    }
 }
