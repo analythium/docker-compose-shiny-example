@@ -8,17 +8,17 @@ services:
       - "9000:3838"
   pink:
     build: ./pink
-    restart: unless-stopped
+    restart: always
     expose:
       - "3838"
   covidapp:
     image: analythium/covidapp-shiny:minimal
-    restart: unless-stopped
+    restart: always
     expose:
       - "3838"
   caddy:
     image: caddy:2.3.0-alpine
-    restart: unless-stopped
+    restart: always
     ports:
       - "80:80"
       - "443:443"

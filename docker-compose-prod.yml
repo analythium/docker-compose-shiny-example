@@ -1,0 +1,4 @@
+services:
+  caddy:
+    volumes:
+      - $PWD/Caddyfile-prod:/etc/caddy/Caddyfile
