@@ -1,3 +1,7 @@
+{
+    email {$EMAIL}
+}
+
 {$HOST} {
     root * /srv
     handle_path /hello/* {
