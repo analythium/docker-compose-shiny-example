@@ -32,7 +32,8 @@ services:
       - hello
       - pink
       - covidapp
-
+    environment:
+      - HOST=":80"
 volumes:
   caddy_data:
   caddy_config:

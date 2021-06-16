@@ -2,5 +2,5 @@ version: "3.7"
 
 services:
   caddy:
-    volumes:
-      - $PWD/Caddyfile-prod:/etc/caddy/Caddyfile
+    environment:
+      - HOST="docker-compose.analythium.net"

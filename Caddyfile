@@ -1,4 +1,4 @@
-:80 {
+{$HOST} {
     root * /srv
     handle_path /hello/* {
         reverse_proxy hello:3838
