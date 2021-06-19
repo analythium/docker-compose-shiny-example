@@ -7,4 +7,17 @@ This repository is a companion to the following blog posts:
 
 ## Development
 
-Use `docker-compose up -d` to start services in development, use `docker-compose down` to stop them.
+Change the `EMAIL` environment variable in the `docker-compose.yml` file.
+
+```bash
+docker-compose up -d
+```
+
+## Production
+
+Change the `EMAIL` environment variable in the `docker-compose.yml` file.
+Change the `HOST` environment variable in the `docker-compose-prod.yml` file.
+
+```bash
+docker-compose -f docker-compose.yml -f docker-compose-prod.yml up -d
+```
