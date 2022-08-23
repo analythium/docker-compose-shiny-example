@@ -21,3 +21,8 @@ Change the `HOST` environment variable in the `docker-compose-prod.yml` file.
 ```bash
 docker-compose -f docker-compose.yml -f docker-compose-prod.yml up -d
 ```
+
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
